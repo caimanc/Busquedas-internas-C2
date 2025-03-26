@@ -73,6 +73,8 @@ export function LinearSearch() {
       return
     }
 
+    parsedArray.sort((a, b) => a - b) // Ordenar el arreglo de menor a mayor
+
     setArray(parsedArray)
     setTarget(parsedTarget)
     setCurrentIndex(0)

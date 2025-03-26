@@ -7,8 +7,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 
-
-
 export function BinarySearch() {
   const [array, setArray] = useState<number[]>([])
   const [arrayInput, setArrayInput] = useState("")
@@ -85,7 +83,7 @@ export function BinarySearch() {
     setRight(parsedArray.length - 1)
     const initialMid = Math.floor((0 + parsedArray.length - 1) / 2)
     setMid(initialMid)
-    setStep(`Inicializando: left=0, right=${parsedArray.length - 1}, mid=${initialMid}`)
+    //setStep(`Inicializando: left=0, right=${parsedArray.length - 1}, mid=${initialMid}`)
     setResult(null)
     setIsSearching(true)
     setIsComplete(false)
@@ -97,7 +95,7 @@ export function BinarySearch() {
     if (left <= right) {
       if (array[mid] === target) {
         setResult(mid)
-        setStep(`Elemento encontrado en la posición ${mid}`)
+        setStep(`Elemento encontrado: ${array[mid]}`)
         setIsSearching(false)
         setIsComplete(true)
         return
@@ -108,13 +106,13 @@ export function BinarySearch() {
         const newMid = Math.floor((newLeft + right) / 2)
         setLeft(newLeft)
         setMid(newMid)
-        setStep(`El elemento ${target} es mayor que ${array[mid]}, ajustando left=${newLeft}, mid=${newMid}`)
+        setStep(`Comparando el valor ${array[mid]} con ${target} (tomando elementos de la derecha)`)
       } else {
         const newRight = mid - 1
         const newMid = Math.floor((left + newRight) / 2)
         setRight(newRight)
         setMid(newMid)
-        setStep(`El elemento ${target} es menor que ${array[mid]}, ajustando right=${newRight}, mid=${newMid}`)
+        setStep(`Comparando el valor ${array[mid]} con ${target} (tomando elementos de la izquierda)`)
       }
     } else {
       setResult(-1)
@@ -205,7 +203,7 @@ export function BinarySearch() {
           {isComplete && (
             <div>
               {result !== -1 ? (
-                <p className="text-green-600 font-medium">¡Elemento encontrado en la posición {result}!</p>
+                <p className="text-green-600 font-medium">¡Elemento encontrado: {array[result!]}!</p>
               ) : (
                 <p className="text-red-600 font-medium">Elemento no encontrado en el arreglo.</p>
               )}

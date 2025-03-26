@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  background-color: #1f2937; /* Color gris oscuro */
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #4b5563; /* Color gris más claro */
+}
