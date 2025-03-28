@@ -44,7 +44,7 @@ function App() {
         <footer className="border-t py-4 bg-background mt-4">
           <div className="container px-4 text-center text-sm text-muted-foreground">
             <p>Ciencias 2 Equipo 5</p>
-            <p>Camilo Andrés Caimán - Sofia Florez - Laura  </p>
+            <p>Camilo Andrés Caimán - Sofia Florez - Laura  Pardo</p>
           </div>
         </footer>
       </div>

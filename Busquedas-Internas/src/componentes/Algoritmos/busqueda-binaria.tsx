@@ -59,7 +59,7 @@ export function BinarySearch() {
       numbers.push(num)
     }
 
-    // Sort the array for binary search
+
     return numbers.sort((a, b) => a - b)
   }
 
@@ -83,7 +83,6 @@ export function BinarySearch() {
     setRight(parsedArray.length - 1)
     const initialMid = Math.floor((0 + parsedArray.length - 1) / 2)
     setMid(initialMid)
-    //setStep(`Inicializando: left=0, right=${parsedArray.length - 1}, mid=${initialMid}`)
     setResult(null)
     setIsSearching(true)
     setIsComplete(false)

@@ -63,7 +63,7 @@ export function HashTruncation() {
       .forEach((pos) => {
         if (pos < key.length) {
           extractedDigits.push(key[pos])
-          newSteps.push(`   Posición ${pos}: ${key[pos]}`)
+          newSteps.push(`   Posición ${pos + 1}: ${key[pos]}`)
         }
       })
 
@@ -113,7 +113,7 @@ export function HashTruncation() {
 
       {key && (
         <div className="space-y-2">
-          <Label>Seleccionar posiciones de dígitos (0-indexado)</Label>
+          <Label>Seleccionar posiciones de dígitos (1-indexado)</Label>
           <div className="flex flex-wrap gap-3 mt-1">
             {Array.from({ length: key.length }).map((_, index) => (
               <div key={index} className="flex items-center space-x-2">
@@ -123,7 +123,7 @@ export function HashTruncation() {
                   onCheckedChange={() => handlePositionChange(index)}
                 />
                 <Label htmlFor={`pos-${index}`} className="text-sm">
-                  {index}: {key[index]}
+                  {index + 1}: {key[index]}
                 </Label>
               </div>
             ))}

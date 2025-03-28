@@ -176,7 +176,7 @@ export function LinearSearch() {
             <div>
               {currentIndex !== null && (
                 <p className="mb-2">
-                  Comparando el elemento en la posición {currentIndex}: {array[currentIndex]} con {target}
+                  Comparando el elemento en la posición {currentIndex + 1}: {array[currentIndex]} con {target}
                 </p>
               )}
               <Button onClick={handleNextStep}>Siguiente paso</Button>
@@ -186,7 +186,7 @@ export function LinearSearch() {
           {isComplete && (
             <div>
               {result !== -1 ? (
-                <p className="text-green-600 font-medium">¡Elemento encontrado en la posición {result}!</p>
+                <p className="text-green-600 font-medium">¡Elemento encontrado en la posición {result + 1}!</p>
               ) : (
                 <p className="text-red-600 font-medium">Elemento no encontrado en el arreglo.</p>
               )}
@@ -220,4 +220,3 @@ export function LinearSearch() {
     </>
   )
 }
-
